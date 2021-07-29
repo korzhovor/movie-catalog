@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe_refresh_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@android:style/Theme.Black.NoTitleBar"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1c1d1f"
+        android:orientation="vertical"
+        android:theme="@android:style/Theme.Black.NoTitleBar"
+        tools:context=".MainActivity">
+
+        <EditText
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:paddingStart="16dp"
+            android:background="@drawable/search_bar"
+            android:drawableStart="@drawable/search_bar_icon"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/roboto"
+            android:hint="@string/search_bar_hint"
+            android:textColorHint="#61000000"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            android:imeOptions="actionSearch"
+            android:maxLines="1"
+            android:inputType="text"/>
+
+        <ProgressBar
+            android:id="@+id/search_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:indeterminate="true"
+            android:indeterminateTintMode="src_atop"
+            android:indeterminateTint="#004FFF"/>
+
+        <LinearLayout
+            android:id="@+id/invisible_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/main_progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:indeterminateDrawable="@drawable/loading_icon_anim"
+                android:indeterminateOnly="true"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/extra_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:visibility="gone"
+                android:layout_marginStart="64dp"
+                android:layout_marginEnd="64dp"/>
+
+            <TextView
+                android:id="@+id/extra_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:visibility="gone"
+                android:gravity="center"
+                android:layout_marginStart="64dp"
+                android:layout_marginEnd="64dp"/>
+
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="vertical"
+            tools:context=".MainActivity">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
